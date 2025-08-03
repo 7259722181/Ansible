@@ -1,0 +1,9 @@
+---
+- name: Copying files to 172.30.5.88
+  hosts: all # Replace with your instance's hostname or IP
+
+  tasks:
+    - name: Copy files in Ansible folder
+      copy:
+        src: "/home/Abhi/Softwares/Ansible"
+        dest: "/home/ec2-user/"

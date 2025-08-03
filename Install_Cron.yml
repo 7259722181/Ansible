@@ -1,0 +1,8 @@
+---
+- name: Install cron on Amazon Linux
+  hosts: all # Replace with your instance's hostname or IP
+  tasks:
+    - name: present cron
+      yum:
+        name: cronie
+        state: present

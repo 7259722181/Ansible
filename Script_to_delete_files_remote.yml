@@ -1,0 +1,12 @@
+---
+- name: Deleating file in remote host
+  hosts: 172.30.5.157
+  tasks:
+    - name: remove files in Ansible folder
+      file:
+        become-user: root
+        path: "/etc/ansible/"
+        state: directory
+        mode: "0777"
+        become: true
+        state: absent

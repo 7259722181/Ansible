@@ -1,0 +1,16 @@
+---
+- name: Cron scheduing
+  hosts: all
+
+  tasks:
+    - name: Cron
+      cron:
+        name: Job scheduled by Ansible
+        minute: "5"
+        hour: "*"
+        day: "*"
+        month: "*"
+        weekday: "2"
+        user: ec2-user
+        job: "/home/ec2-user/File.sh/"
+

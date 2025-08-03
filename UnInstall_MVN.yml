@@ -1,0 +1,8 @@
+---
+- name: Install Git on Amazon Linux
+  hosts: all # Replace with your instance's hostname or IP
+  tasks:
+    - name: Uninstall maven
+      yum:
+        name: maven
+        state: absent

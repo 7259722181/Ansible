@@ -1,0 +1,10 @@
+---
+- name:
+  hosts: all
+  command: /some/command/that/needs/root
+  become: true
+
+  tasks:
+    - name: to install corn in remote hosts
+      become user: root
+      shell: "/home/ec2-user/Ansible/scripts/Install_crontab.sh" 

@@ -1,0 +1,9 @@
+---
+- name: Install Git on Amazon Linux
+  hosts: localhost # Replace with your instance's hostname or IP
+  become: true  # Use sudo for installation
+  tasks:
+    - name: uninstall maven
+      yum:
+        name: maven
+        state: absent
