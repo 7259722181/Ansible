@@ -1,0 +1,8 @@
+---
+- name: Install Git on Amazon Linux
+  hosts: localhost # Replace with your instance's hostname or IP
+  tasks:
+    - name: present Git
+      yum:
+        name: git
+        state: present

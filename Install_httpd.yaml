@@ -1,0 +1,14 @@
+---
+- name: Install httpd
+  hosts: localhost # Replace with your instance's hostname or IP
+  become: true  # Use sudo for installation
+  tasks:
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: present
+
+    - name: Restart the httpd service
+      service:
+        name: httpd
+        state: restarted
