@@ -1,0 +1,26 @@
+---
+- name: Instaling httpd and telnet
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Installing httpd
+      yum:
+        name: httpd
+        state: present
+
+    - name: stop httpd 
+      service:
+        name: httpd
+        state: stopped
+   
+    - name: start httpd services
+      service:
+        name: httpd
+        state: started
+
+    - name: Install telnet
+      yum:
+        name: telnet
+        state: present
+

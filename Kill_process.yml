@@ -1,0 +1,17 @@
+---
+- name: Kill process
+  hosts: localhost
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Kill running process
+      shell: "ps -ef|grep -i /usr/sbin/chronyd -F 2 | awk '{print$2}'"
+      register: running_process
+
+    - name: Kill running process
+      shell: "sudo ill {{item}}"
+      with_items: "{{ running_process.stdout_lines}}"
+
+
+
